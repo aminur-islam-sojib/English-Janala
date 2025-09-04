@@ -8,7 +8,6 @@ const Card = () => {
   const data = useSelector((state) => state.dataR.levelData);
   const selected = useSelector((state) => state.dataR.selected);
   const loading = useSelector((state) => state.dataR.loading);
-  console.log(loading);
 
   if (loading) {
     return <LoadingCard />;

@@ -3,16 +3,22 @@ import { DetailsCard } from './DetailsCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { VocabSec } from './Vocab';
 
 const SelectedCard = () => {
   const datas = useSelector((state) => state.dataR.levelData);
   const [selectedID, setSelectedID] = useState(null);
   const handleDetails = (id) => {
-    console.log(id);
     setSelectedID(id);
-    document.getElementById('my_modal_5').showModal();
   };
+
+  useEffect(() => {
+    if (selectedID) {
+      const modal = document.getElementById('my_modal_5');
+      if (modal) modal.showModal();
+    }
+  }, [selectedID]);
 
   return (
     <>
@@ -46,6 +52,8 @@ const SelectedCard = () => {
         </div>
       </section>
       {selectedID && <DetailsCard id={selectedID} />}
+      {/* {selectedID && <VocabSec id2={selectedID} />} */}
+      {/* {selectedID && <VocabSec id2={selectedID} style={{ display: 'none' }} />} */}
     </>
   );
 };

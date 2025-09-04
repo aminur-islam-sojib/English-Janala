@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   levels: [],
   levelData: [],
+  detailsData: [],
   loading: false,
   selected: false,
 };
@@ -26,9 +27,18 @@ const dataSlice = createSlice({
       const data = actions.payload;
       state.selected = data;
     },
+    setDetailsData: (state, actions) => {
+      const data = actions.payload;
+      state.detailsData = data;
+    },
   },
 });
 
-export const { setLevel, setLoading, setLevelsData, setSelected } =
-  dataSlice.actions;
+export const {
+  setLevel,
+  setLoading,
+  setLevelsData,
+  setSelected,
+  setDetailsData,
+} = dataSlice.actions;
 export default dataSlice.reducer;

@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
-import { VocabSec } from './Vocab';
 
 const SelectedCard = () => {
   const datas = useSelector((state) => state.dataR.levelData);
@@ -46,14 +45,11 @@ const SelectedCard = () => {
                   <FontAwesomeIcon icon={faVolumeHigh} />
                 </div>
               </div>
-              ;
             </div>
           ))}
         </div>
       </section>
       {selectedID && <DetailsCard id={selectedID} />}
-      {/* {selectedID && <VocabSec id2={selectedID} />} */}
-      {/* {selectedID && <VocabSec id2={selectedID} style={{ display: 'none' }} />} */}
     </>
   );
 };

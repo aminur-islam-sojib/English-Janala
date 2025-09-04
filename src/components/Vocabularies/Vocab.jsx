@@ -1,14 +1,9 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  setLevel,
-  setLoading,
-  setLevelsData,
-  setDetailsData,
-} from './DataSlice';
+import { setLevel, setLoading, setLevelsData } from './DataSlice';
 
-const VocabSec = ({ id, id2 }) => {
+const VocabSec = ({ id }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -48,16 +43,6 @@ const VocabSec = ({ id, id2 }) => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-
-  useEffect(() => {
-    console.log(id2);
-    const url = `https://openapi.programming-hero.com/api/word/${id2}`;
-    const fetchData = async () => {
-      const response = await axios.get(url);
-      dispatch(setDetailsData(response.data.data));
-    };
-    fetchData();
-  }, [id2]);
 };
 
 export { VocabSec };

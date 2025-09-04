@@ -1,0 +1,50 @@
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setLevel, setLoading, setLevelsData } from './DataSlice';
+
+const VocabSec = ({ id }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const url = 'https://openapi.programming-hero.com/api/levels/all';
+    const fetchData = async () => {
+      try {
+        dispatch(setLoading(true));
+        const res = await axios.get(url);
+        dispatch(setLevel(res.data.data));
+        dispatch(setLoading(false));
+      } catch (error) {
+        console.log(error);
+      } finally {
+        dispatch(setLoading(false));
+      }
+    };
+
+    fetchData();
+  }, [dispatch]);
+
+  useEffect(() => {
+    const url = `https://openapi.programming-hero.com/api/level/${id}`;
+
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(url);
+        dispatch(setLevelsData(response.data.data));
+        setLoading(false);
+      } catch (error) {
+        console.log('Hello', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
+
+  // return <></>;
+};
+
+export { VocabSec };

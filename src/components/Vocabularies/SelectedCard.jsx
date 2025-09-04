@@ -1,11 +1,19 @@
 import { useSelector } from 'react-redux';
+import { DetailsCard } from './DetailsCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 const SelectedCard = () => {
   const datas = useSelector((state) => state.dataR.levelData);
-  //   console.log(datas);
+  const [selectedID, setSelectedID] = useState(null);
+  const handleDetails = (id) => {
+    console.log(id);
+    setSelectedID(id);
+    document.getElementById('my_modal_5').showModal();
+  };
+
   return (
     <>
       <section className=" w-[80%] mx-auto bg-gray-100 p-5 rounded-2xl">
@@ -22,17 +30,22 @@ const SelectedCard = () => {
                 </h1>
               </div>
               <div className=" flex justify-between">
-                <div className=" bg-[#1A91FF1A] p-2 rounded">
+                <div
+                  onClick={() => handleDetails(data.id)}
+                  className=" bg-[#1A91FF1A] p-2 rounded cursor-pointer"
+                >
                   <FontAwesomeIcon icon={faCircleInfo} />
                 </div>
-                <div className=" bg-[#1A91FF1A] p-2 rounded">
+                <div className=" bg-[#1A91FF1A] p-2 rounded cursor-pointer">
                   <FontAwesomeIcon icon={faVolumeHigh} />
                 </div>
               </div>
+              ;
             </div>
           ))}
         </div>
       </section>
+      {selectedID && <DetailsCard id={selectedID} />}
     </>
   );
 };

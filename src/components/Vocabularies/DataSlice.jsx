@@ -20,7 +20,6 @@ const dataSlice = createSlice({
     },
     setLevelsData: (state, actions) => {
       const data = actions.payload;
-      // console.log(data);
       state.levelData = data;
     },
     setSelected: (state, actions) => {

@@ -7,11 +7,15 @@ import { LoadingCard } from './LoadingCard';
 const Card = () => {
   const data = useSelector((state) => state.dataR.levelData);
   const selected = useSelector((state) => state.dataR.selected);
-  console.log(selected);
+  const loading = useSelector((state) => state.dataR.loading);
+  console.log(loading);
+
+  if (loading) {
+    return <LoadingCard />;
+  }
 
   return (
     <>
-      <LoadingCard />
       {!selected ? (
         <SelectingLesson />
       ) : data && data.length !== 0 ? (

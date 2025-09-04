@@ -29,14 +29,14 @@ const VocabSec = ({ id }) => {
 
     const fetchData = async () => {
       try {
-        setLoading(true);
+        dispatch(setLoading(true));
         const response = await axios.get(url);
         dispatch(setLevelsData(response.data.data));
         setLoading(false);
       } catch (error) {
         console.log('Hello', error);
       } finally {
-        setLoading(false);
+        dispatch(setLoading(false));
       }
     };
 

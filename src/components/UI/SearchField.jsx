@@ -6,11 +6,11 @@ const SearchField = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const handleSearch = () => {
-    setSearchValue(inputValue); // update only when button clicked
+    setSearchValue(inputValue.trim()); // update only when button clicked
   };
 
   return (
-    <section className="w-[80%] mx-auto text-center mb-10">
+    <section className="w-[80%] mx-auto text-center my-5">
       <div className="join">
         <div>
           <label className="input rounded-l">
@@ -26,7 +26,9 @@ const SearchField = () => {
           Search
         </button>
       </div>
-      <SearchResult inputValue={searchValue} />
+      <div className=" mt-5">
+        {searchValue && <SearchResult inputValue={searchValue} />}
+      </div>
     </section>
   );
 };

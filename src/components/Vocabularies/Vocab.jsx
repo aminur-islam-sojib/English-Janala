@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setLevel, setLoading, setLevelsData, setAllData } from './DataSlice';
+import { SelectedCard } from './SelectedCard';
+import { useSelector } from 'react-redux';
 
 const VocabSec = ({ id }) => {
   const dispatch = useDispatch();
@@ -61,6 +63,15 @@ const VocabSec = ({ id }) => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  //Word Data
+  const datas = useSelector((state) => state.dataR.levelData);
+  console.log(datas);
+  return (
+    <>
+      <SelectedCard datas={datas} />
+    </>
+  );
 };
 
 export { VocabSec };

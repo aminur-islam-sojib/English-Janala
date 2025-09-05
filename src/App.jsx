@@ -14,7 +14,7 @@ function App() {
       <NavBar />
       <Header />
       <LevelsBtn />
-      <SearchField />
+
       <Card />
       <QuestionSec />
       <Accordion />

@@ -2,6 +2,7 @@
 @plugin "daisyui";
 * {
   font-family: 'Poppins', sans-serif;
+  /* border: 1px solid red; */
 }
 
 .bangla {

@@ -26,7 +26,11 @@ const LevelsBtn = () => {
           <div key={dt.id}>
             <button
               onClick={() => handleBtn(dt.level_no)}
-              className="btn btn-outline btn-primary"
+              className={`btn btn-outline ${
+                btnID === dt.level_no
+                  ? 'btn-primary bg-[#2b12b7] text-white' // active style
+                  : 'btn-primary'
+              }`}
             >
               <FontAwesomeIcon icon={faBookOpen} /> Lesson - 0{dt.level_no}
             </button>

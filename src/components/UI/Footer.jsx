@@ -5,9 +5,9 @@ const Footer = () => {
     <footer className="footer border-t-2 border-[#FFEBEB] items-center flex mt-20 bg-gray-100 text-black justify-between sm:footer-horizontal  p-15">
       <aside>
         <div>
-          <h className="text-xl font-semibold text-nowrap flex items-center border-0 gap-2">
+          <h1 className="text-xl font-semibold text-nowrap flex items-center border-0 gap-2">
             English <img src={logo} alt="" /> জানালা
-          </h>
+          </h1>
           <h1 className="bangla text-[20px] font-medium mt-5 mb-2">
             ইংরেজি শিখুন সহজে
           </h1>

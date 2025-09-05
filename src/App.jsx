@@ -1,8 +1,10 @@
 import './App.css';
+import { Card } from './components/UI/Card';
 import { NavBar } from './components/UI/NavBar';
 import { Header } from './components/UI/Header';
+import { Accordion } from './components/UI/Accordion';
+import { QuestionSec } from './components/UI/QuestionSec';
 import { LevelsBtn } from './components/Vocabularies/LevelsBtn';
-import { Card } from './components/UI/Card';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Header />
       <LevelsBtn />
       <Card />
+      <QuestionSec />
+      <Accordion />
     </>
   );
 }

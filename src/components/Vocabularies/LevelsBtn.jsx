@@ -18,7 +18,7 @@ const LevelsBtn = () => {
   return (
     <>
       {' '}
-      <h1 className=" font-black text-4xl text-center">
+      <h1 className="mt-10 font-black text-4xl text-center">
         <span className=" text-[#00BCFF]">Let's </span> Learn Vocabularies{' '}
       </h1>
       <div className=" flex flex-wrap justify-center gap-2 my-5">

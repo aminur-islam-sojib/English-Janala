@@ -4,6 +4,7 @@ import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { VocabSec } from './Vocab';
 import { setSelected } from './DataSlice';
+import { SearchField } from '../UI/SearchField';
 
 const LevelsBtn = () => {
   const data = useSelector((state) => state.dataR.levels);
@@ -21,6 +22,7 @@ const LevelsBtn = () => {
       <h1 className="mt-10 font-black text-4xl text-center">
         <span className=" text-[#00BCFF]">Let's </span> Learn Vocabularies{' '}
       </h1>
+      <SearchField />
       <div className=" flex flex-wrap justify-center gap-2 my-5">
         {data.map((dt) => (
           <div key={dt.id}>

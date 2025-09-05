@@ -21,7 +21,7 @@ const LevelsBtn = () => {
       <h1 className=" font-black text-4xl text-center">
         <span className=" text-[#00BCFF]">Let's </span> Learn Vocabularies{' '}
       </h1>
-      <div className=" flex flex-wrap justify-center gap-2 mt-5">
+      <div className=" flex flex-wrap justify-center gap-2 my-5">
         {data.map((dt) => (
           <div key={dt.id}>
             <button

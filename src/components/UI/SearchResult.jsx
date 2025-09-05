@@ -1,6 +1,5 @@
-import { ResultScard } from './ResultScard';
-import { NoResultCard } from './NoResultCard';
 import { useSelector } from 'react-redux';
+import { SelectedCard } from '../Vocabularies/SelectedCard';
 
 const SearchResult = ({ inputValue }) => {
   const allWords = useSelector((state) => state.dataR?.allData);
@@ -12,7 +11,11 @@ const SearchResult = ({ inputValue }) => {
 
   console.log(filterWord);
 
-  return <></>;
+  return (
+    <>
+      <SelectedCard datas={filterWord} style={{ display: 'none' }} />
+    </>
+  );
 };
 
 export { SearchResult };

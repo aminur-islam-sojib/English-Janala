@@ -19,9 +19,8 @@ const dataSlice = createSlice({
       const load = actions.payload;
       state.loading = load;
     },
-    setLevelsData: (state, actions) => {
-      const data = actions.payload;
-      state.levelData = data;
+    setLevelsData: (state, action) => {
+      state.levelData = action.payload;
     },
     setSelected: (state, actions) => {
       const data = actions.payload;

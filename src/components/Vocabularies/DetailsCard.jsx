@@ -25,7 +25,7 @@ const DetailsCard = ({ id }) => {
   return (
     <>
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
+        <div className="modal-box text-left">
           <div className="border-2 border-[#EDF7FF] p-5">
             <h3 className="font-semibold text-3xl">
               {data?.word} (<FontAwesomeIcon icon={faMicrophoneLines} />{' '}
